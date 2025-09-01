@@ -32,7 +32,7 @@ function App() {
       onChange={(e)=>setSearch(e.target.value)}
       />
 
-      <CardList {...books.key}></CardList>
+      <CardList books={books}></CardList>
     </>
   )
 }
