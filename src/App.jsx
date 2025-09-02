@@ -9,6 +9,10 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState();
 
+  
+
+  const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(search.toLowerCase()));
+
 
   useEffect ( () => {
 
@@ -25,14 +29,14 @@ function App() {
 
   return (
     <>
-       <input 
+       <input
       type='text'
       placeholder='Busca tu libro'
       value={search}
       onChange={(e)=>setSearch(e.target.value)}
       />
 
-      <CardList books={books}></CardList>
+      <CardList books={filteredBooks}></CardList>
     </>
   )
 }
